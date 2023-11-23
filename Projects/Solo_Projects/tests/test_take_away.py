@@ -32,7 +32,7 @@ def test_unavailable_item_to_order():
 
 def test_text_sender():
     take_away = TakeAway()
-    to_numbers = '+447307251340'
+    to_numbers = '+447307251341'
     account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
     auth_token = '[AuthToken]'  
     from_number = '+447893938522'
