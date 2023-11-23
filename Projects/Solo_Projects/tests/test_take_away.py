@@ -34,7 +34,7 @@ def test_text_sender():
     take_away = TakeAway()
     to_numbers = '+447307251340'
     account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-    auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
+    auth_token = '[AuthToken]'  
     from_number = '+447893938522'
     message = 'example message'
     take_away.text_sender(account_sid, auth_token, from_number, to_numbers, message)

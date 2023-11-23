@@ -31,7 +31,7 @@ class TakeAway:
     def text_sender(self, account_sid, auth_token, from_number, client_number, message):
         to_numbers = [client_number]
         account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-        auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
+        auth_token = '[AuthToken]'
         from_number = '+447893938522'
         message += f"\nEstimated delivery time: {DeliveryEstimation.get_one_hour_ahead_time()}"
         Sms.send_sms(account_sid, auth_token, from_number, to_numbers, message)

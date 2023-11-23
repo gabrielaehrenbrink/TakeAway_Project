@@ -11,7 +11,7 @@ def test_place_order():
 def test_send_text_():
     sms_mock = Mock()
     account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-    auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
+    auth_token = '[AuthToken]'
     from_number = '+447893938522'
     to_number = '+447307251340'
     message = "Your order is on the way."
