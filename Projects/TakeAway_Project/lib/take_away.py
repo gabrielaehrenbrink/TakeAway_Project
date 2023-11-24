@@ -1,5 +1,6 @@
 from lib.text_sender import Sms
 from lib.delivery_estimation import DeliveryEstimation
+from lib.authentication import ACCOUNT_SID, AUTH_TOKEN, TO_NUMBER, FROM_NUMBER
 
 class TakeAway:
     def __init__(self):
@@ -27,12 +28,16 @@ class TakeAway:
 
     def receipt(self):
         return f"You have ordered: {', '.join(self.order)}, your final bill is {self.bill}£"
+    
 
     def text_sender(self, account_sid, auth_token, from_number, client_number, message):
         to_numbers = [client_number]
-        account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-        auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
-        from_number = '+447893938522'
+        account_sid = ACCOUNT_SID
+        auth_token = AUTH_TOKEN
+        from_number = FROM_NUMBER
         message += f"\nEstimated delivery time: {DeliveryEstimation.get_one_hour_ahead_time()}"
         Sms.send_sms(account_sid, auth_token, from_number, to_numbers, message)
         return 'Text sent'
+
+
+# For privacy reasons auth_token and account_sid are saved in a private file

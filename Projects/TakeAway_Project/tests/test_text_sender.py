@@ -1,6 +1,7 @@
 
 from unittest.mock import Mock
 from lib.text_sender import Sms
+from lib.authentication import ACCOUNT_SID, AUTH_TOKEN, TO_NUMBER, FROM_NUMBER
 
 
 def test_place_order():
@@ -10,10 +11,12 @@ def test_place_order():
 
 def test_send_text_():
     sms_mock = Mock()
-    account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-    auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
-    from_number = '+447893938522'
-    to_number = '+447307251340'
+    account_sid = ACCOUNT_SID
+    auth_token = AUTH_TOKEN
+    from_number = FROM_NUMBER
+    to_number = TO_NUMBER
     message = "Your order is on the way."
     sms_mock.send_sms(account_sid, auth_token, from_number, to_number, message)
     sms_mock.send_sms.assert_called_once_with(account_sid, auth_token, from_number, to_number, message)
+
+# For privacy reasons auth_token and account_sid are saved in a private file

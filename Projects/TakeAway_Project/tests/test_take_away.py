@@ -1,4 +1,7 @@
 from lib.take_away import TakeAway
+from lib.authentication import *
+from lib.authentication import ACCOUNT_SID, AUTH_TOKEN, TO_NUMBER, FROM_NUMBER
+
 
 def test_read_takeaway_menu():
     take_away = TakeAway()
@@ -32,11 +35,14 @@ def test_unavailable_item_to_order():
 
 def test_text_sender():
     take_away = TakeAway()
-    to_numbers = '+447307251340'
-    account_sid = 'ACa3f4836d8b69fee063ab09a13f95b0be'
-    auth_token = '7d9a86a9a3b650272bb7562fbebb1f8c'
-    from_number = '+447893938522'
+    to_numbers = TO_NUMBER
+    account_sid = ACCOUNT_SID
+    auth_token = AUTH_TOKEN
+    from_number = FROM_NUMBER
     message = 'example message'
     take_away.text_sender(account_sid, auth_token, from_number, to_numbers, message)
     result = 'Text sent'
     assert result == 'Text sent'
+
+
+# For privacy reasons auth_token and account_sid are saved in a private file
